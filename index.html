@@ -12,7 +12,7 @@
       color: var(--tg-theme-text-color);
       padding: 20px;
     }
-    .form-control, .form-check-input {
+    .form-control, .form-select {
       background-color: var(--tg-theme-secondary-bg-color);
       color: var(--tg-theme-text-color);
       border: 1px solid #ccc;
@@ -26,14 +26,12 @@
 </head>
 <body>
   <h4 class="mb-3">Select Books</h4>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="Book A" id="bookA">
-    <label class="form-check-label" for="bookA">Book A</label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="Book B" id="bookB">
-    <label class="form-check-label" for="bookB">Book B</label>
-  </div>
+  <select class="form-select" id="bookSelect" multiple>
+    <option value="Book A">Book A</option>
+    <option value="Book B">Book B</option>
+    <option value="Book C">Book C</option>
+    <option value="Book D">Book D</option>
+  </select>
 
   <h4 class="mt-4">Your Info</h4>
   <div class="mb-3">
