@@ -1,12 +1,17 @@
 function submitForm() {
-  const books = Array.from(document.querySelectorAll('input[type=checkbox]:checked')).map(cb => cb.value);
+  const selectedBooks = Array.from(document.querySelectorAll('input[type=checkbox]:checked')).map(cb => cb.value);
   const name = document.getElementById('name').value;
   const whatsapp = document.getElementById('whatsapp').value;
 
-  fetch('https://your-pythonanywhere-username.pythonanywhere.com/submit', {
+  if (!name || !whatsapp || selectedBooks.length === 0) {
+    alert("Please fill all fields and select at least one book.");
+    return;
+  }
+
+  fetch('https://yourusername.pythonanywhere.com/submit', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, whatsapp, books })
+    body: JSON.stringify({ name, whatsapp, books: selectedBooks })
   }).then(() => {
     Telegram.WebApp.close();
   });
