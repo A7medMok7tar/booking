@@ -3,19 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Book a Printed Book</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: var(--tg-theme-bg-color);
+      color: var(--tg-theme-text-color);
+      padding: 20px;
+    }
+    .form-control, .form-check-input {
+      background-color: var(--tg-theme-secondary-bg-color);
+      color: var(--tg-theme-text-color);
+      border: 1px solid #ccc;
+    }
+    .btn-primary {
+      background-color: var(--tg-theme-button-color);
+      color: var(--tg-theme-button-text-color);
+      border: none;
+    }
+  </style>
 </head>
 <body>
-  <h2>Select Books</h2>
-  <label><input type="checkbox" value="Book A"> Book A</label><br>
-  <label><input type="checkbox" value="Book B"> Book B</label><br>
+  <h4 class="mb-3">Select Books</h4>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Book A" id="bookA">
+    <label class="form-check-label" for="bookA">Book A</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Book B" id="bookB">
+    <label class="form-check-label" for="bookB">Book B</label>
+  </div>
 
-  <h2>Your Info</h2>
-  <input type="text" id="name" placeholder="Your Name"><br>
-  <input type="text" id="whatsapp" placeholder="WhatsApp Number"><br>
-
-  <button onclick="submitForm()">Submit</button>
+  <h4 class="mt-4">Your Info</h4>
+  <div class="mb-3">
+    <input type="text" class="form-control" id="name" placeholder="Your Name">
+  </div>
+  <div class="mb-3">
+    <input type="text" class="form-control" id="whatsapp" placeholder="WhatsApp Number">
+  </div>
+  <button class="btn btn-primary w-100" onclick="submitForm()">Submit</button>
 
   <script src="script.js"></script>
 </body>
