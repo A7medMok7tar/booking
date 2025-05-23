@@ -1,5 +1,6 @@
 function submitForm() {
-  const selectedBooks = Array.from(document.querySelectorAll('input[type=checkbox]:checked')).map(cb => cb.value);
+  const select = document.getElementById('bookSelect');
+  const selectedBooks = Array.from(select.selectedOptions).map(option => option.value);
   const name = document.getElementById('name').value;
   const whatsapp = document.getElementById('whatsapp').value;
 
